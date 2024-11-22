@@ -308,3 +308,15 @@ body.light-mode .navbar {
         padding: 10px;
     }
 }
+
+@media (max-width: 768px) {
+    .context-bar {
+        display: none; /* Hide context bar on smaller screens */
+    }
+    .content {
+        padding-left: 0; /* Remove padding reserved for context bar */
+    }
+    .content-placeholder {
+        display: none; /* Hide placeholder when context bar is not visible */
+    }
+}
