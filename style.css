@@ -70,9 +70,10 @@ a:hover {
 .header h1 {
     font-size: 3.5rem;
     font-weight: 700;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+    color: #ffffff; /* 确保文字为白色，适配深色背景 */
     margin: 0;
     z-index: 1; /* 确保标题显示在图片上方 */
+    text-shadow: none; /* 去掉文字阴影 */
 }
 
 /* Scroll Bar Style */
