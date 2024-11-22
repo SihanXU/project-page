@@ -1,0 +1,269 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    scroll-behavior: smooth;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Night Mode (Default) */
+body.dark-mode {
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+/* Day Mode */
+body.light-mode {
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+/* Links */
+a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+body.dark-mode a {
+    color: #AAAAAA;
+}
+
+body.light-mode a {
+    color: #555555;
+}
+
+a:hover {
+    color: #FFFFFF;
+}
+
+/* Header Section */
+.header {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    text-align: center;
+    background-color: #000; /* 背景色用于无图片时 */
+    color: #fff;
+    overflow: hidden;
+}
+
+/* Promo Banner Background */
+.promo-banner {
+    background-image: url('example.jpg'); /* 替换为你的宣传图路径 */
+    background-size: cover; /* 确保图片覆盖整个区域 */
+    background-position: center; /* 让图片居中显示 */
+    background-repeat: no-repeat; /* 不重复图片 */
+    height: 100vh; /* 高度填充整个视口 */
+    display: flex; /* 保持居中对齐 */
+    justify-content: center;
+    align-items: center;
+    position: relative; /* 保持文字和背景叠加 */
+    color: white; /* 确保文字颜色清晰 */
+    text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.7); /* 增强文字的可读性 */
+}
+
+/* Title in Header */
+.header h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+    margin: 0;
+    z-index: 1; /* 确保标题显示在图片上方 */
+}
+
+/* Scroll Bar Style */
+.scroll-bar {
+    position: absolute;
+    bottom: 5vh;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: max(5vw, 60px);
+    height: max(1vh, 8px);
+    background-color: rgba(0, 0, 0, 0.15);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.scroll-bar::after {
+    content: "";
+    display: block;
+    width: max(3vw, 40px);
+    height: max(0.5vh, 3px);
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 50px;
+    animation: pulse 1.8s infinite;
+    transition: background-color 0.3s ease;
+}
+
+body.light-mode .scroll-bar {
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+body.light-mode .scroll-bar::after {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    50% {
+        opacity: 0.5;
+        transform: translateY(max(0.8vh, 8px));
+    }
+}
+
+/* Navigation Bar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%; /* 覆盖整个屏幕宽度 */
+    height: 60px;
+    display: flex;
+    justify-content: center; /* 居中对齐内部内容 */
+    background-color: transparent;
+    color: inherit;
+    padding: 0 20px;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+.navbar-content {
+    width: 100%;
+    max-width: 1200px; /* 内容最大宽度 */
+    display: flex;
+    justify-content: space-between; /* 左右对齐 */
+    align-items: center;
+}
+
+body.dark-mode .navbar {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+body.light-mode .navbar {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.nav-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    opacity: 0.9;
+}
+
+/* Context Bar */
+.context-bar {
+    width: 250px;
+    padding-right: 20px;
+    position: fixed;
+    top: 80px;
+    height: calc(100vh - 100px);
+    visibility: hidden;
+}
+
+.context-bar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: #222;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.context-bar ul li {
+    margin: 10px 0;
+}
+
+.context-bar ul li a {
+    font-size: 1rem;
+    padding: 10px;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 4px;
+    display: block;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.context-bar ul li a:hover {
+    background-color: #444;
+    color: #fff;
+}
+
+/* Placeholder for content alignment */
+.content-placeholder {
+    width: 250px;
+    visibility: hidden;
+}
+
+/* Main Content Section */
+.content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    padding: 60px;
+    margin-top: 60px;
+    min-height: calc(100vh - 60px);
+}
+
+.content-section {
+    flex: 1;
+    padding-left: 40px;
+}
+
+.content-section h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.content-section p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
+
+/* Mode Toggle Button */
+.mode-toggle {
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.mode-toggle:hover {
+    transform: scale(1.2);
+}
+
+/* Footer Section */
+.footer {
+    text-align: center;
+    padding: 20px 10px;
+    font-size: 0.9rem;
+    color: inherit;
+}
+
+.footer a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: inherit;
+}
+
+/* Section Adjustment for Navbar */
+.section {
+    position: relative;
+    padding-top: 80px;
+    margin-top: -80px;
+}
