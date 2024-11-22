@@ -320,3 +320,13 @@ body.light-mode .navbar {
         display: none; /* Hide placeholder when context bar is not visible */
     }
 }
+
+@media (max-width: 768px) {
+    .navbar-content {
+        max-width: none; /* Remove the max-width restriction for mobile */
+        width: 100%; /* Make navbar content span the full width */
+    }
+    .navbar {
+        flex-direction: column; /* Stack navbar items vertically on smaller screens */
+    }
+}
