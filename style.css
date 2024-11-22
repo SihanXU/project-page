@@ -53,9 +53,14 @@ a:hover {
 
 /* Promo Banner Background */
 .promo-banner {
-    background-image: url('example.jpg'); /* 替换为你的宣传图路径 */
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.3) 20%, /* 夜间模式：顶部渐变少 */
+        rgba(0, 0, 0, 0.8) 80% /* 夜间模式：底部渐变多 */
+    ), 
+    url('example.jpg'); /* 替换为你的宣传图路径 */
     background-size: cover; /* 确保图片覆盖整个区域 */
-    background-position: center; /* 让图片居中显示 */
+    background-position: center; /* 图片居中显示 */
     background-repeat: no-repeat; /* 不重复图片 */
     height: 100vh; /* 高度填充整个视口 */
     display: flex; /* 保持居中对齐 */
@@ -64,7 +69,30 @@ a:hover {
     position: relative; /* 保持文字和背景叠加 */
     color: white; /* 确保文字颜色清晰 */
     text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.7); /* 增强文字的可读性 */
+    transition: background 0.3s ease; /* 平滑切换白天/夜间模式 */
 }
+
+/* 白天模式的渐变效果 */
+body.light-mode .promo-banner {
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.3) 20%, /* 白天模式：顶部渐变少 */
+        rgba(255, 255, 255, 0.8) 80% /* 白天模式：底部渐变多 */
+    ), 
+    url('example.jpg'); /* 替换为你的宣传图路径 */
+    background-size: cover; /* 确保图片覆盖整个区域 */
+    background-position: center; /* 图片居中显示 */
+    background-repeat: no-repeat; /* 不重复图片 */
+    height: 100vh; /* 高度填充整个视口 */
+    display: flex; /* 保持居中对齐 */
+    justify-content: center;
+    align-items: center;
+    position: relative; /* 保持文字和背景叠加 */
+    color: white; /* 确保文字颜色清晰 */
+    text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.7); /* 增强文字的可读性 */
+    transition: background 0.3s ease; /* 平滑切换白天/夜间模式 */
+}
+
 
 /* Title in Header */
 .header h1 {
@@ -87,7 +115,7 @@ a:hover {
     justify-content: center;
     width: max(5vw, 60px);
     height: max(1vh, 8px);
-    background-color: rgba(0, 0, 0, 0.15);
+    background-color: rgba(255, 255, 255, 0.15);
     border-radius: 50px;
     cursor: pointer;
     transition: background-color 0.3s ease;
@@ -98,7 +126,7 @@ a:hover {
     display: block;
     width: max(3vw, 40px);
     height: max(0.5vh, 3px);
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(255, 255, 255, 0.7);
     border-radius: 50px;
     animation: pulse 1.8s infinite;
     transition: background-color 0.3s ease;
